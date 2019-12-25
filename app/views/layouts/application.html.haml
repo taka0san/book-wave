@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title BookWave
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      .header__logo
+        = link_to "/" do
+          BOOKWAVE
+      %ul.header__menus
+        %li.header__menus__about
+          = link_to home_about_path do
+            BOOKWAVEとは
+    = yield
